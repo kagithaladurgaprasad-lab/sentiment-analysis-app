@@ -1,6 +1,8 @@
 import streamlit as st
 import pickle
 import re
+import streamlit as st
+st.title("Debug Mode Active")
 
 # Load model
 model = pickle.load(open("model.pkl", "rb"))
