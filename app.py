@@ -5,8 +5,19 @@ import streamlit as st
 st.title("Debug Mode Active")
 
 # Load model
-model = pickle.load(open("model.pkl", "rb"))
+import streamlit as st
+import os
+import pickle
 
+# load model
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "model.pkl")
+
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
+
+# rest of your app code below
+st.title("Sentiment Analysis App")
 # Load vectorizer
 tfidf = pickle.load(open("tfidf.pkl", "rb"))
 
